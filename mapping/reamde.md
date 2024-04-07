@@ -1,1 +1,1 @@
-credit by jinho mo, donggyun yo
+credit by jinho mo, donggyun yoo
