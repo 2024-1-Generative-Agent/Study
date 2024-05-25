@@ -1,0 +1,97 @@
+{
+  "persona": {
+    "Dylan Yoon": {
+      "movement": [
+        16,
+        75
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "having breakfast and reading the newspaper @ the Ville:Hobbs Cafe:cafe:cafe customer seating",
+      "chat": null
+    },
+    "Emily Parker": {
+      "movement": [
+        26,
+        75
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "attending her art history class (taking notes on the lecture) @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Helen Potter": {
+      "movement": [
+        37,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "exploring the artwork at the gallery @ the Ville:Gallery:firsh exhibit place stand exhibit:first piece",
+      "chat": null
+    },
+    "Johnny Kim": {
+      "movement": [
+        16,
+        87
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "working as a university lecturer (reviewing his lecture notes) @ the Ville:artist's co-living space:Francisco Lopez's bathroom:bathroom sink",
+      "chat": null
+    },
+    "Reynolds Liam": {
+      "movement": [
+        26,
+        87
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "attending his English literature class (walking to his English literature class) @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Elowen Hart": {
+      "movement": [
+        54,
+        70
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "working on her new paintings in her home art studio (setting up her art supplies and materials) @ the Ville:Arthur Burton's apartment:main room:desk",
+      "chat": null
+    },
+    "Ethan Reed": {
+      "movement": [
+        66,
+        75
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "commuting to work @ the Ville:Hobbs Cafe:cafe:cafe customer seating",
+      "chat": null
+    },
+    "James Mond": {
+      "movement": [
+        73,
+        70
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "opening the gallery for visitors @ the Ville:Gallery:enterance infor:employee place",
+      "chat": null
+    },
+    "Rain Forest": {
+      "movement": [
+        87,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "browsing the gallery for new and exciting artworks (walking around the gallery, taking note of any new pieces) @ the Ville:Gallery:enterance exhibit enterance:guide pannel",
+      "chat": null
+    },
+    "Tina Thompson": {
+      "movement": [
+        95,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "opening the gallery information desk and assisting visitors @ the Ville:Gallery:enterance infor:employee place",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:00:00"
+  }
+}
