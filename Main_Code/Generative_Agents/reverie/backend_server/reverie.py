@@ -315,7 +315,11 @@ class ReverieServer:
       # Done with this iteration if <int_counter> reaches 0. 
       if int_counter == 0: 
         break
-
+      
+      print("="*30)
+      print(f"\n\n----------------STEP {int_counter} -------------------------\n\n")
+      print("="*30)
+        
       # <curr_env_file> file is the file that our frontend outputs. When the
       # frontend has done its job and moved the personas, then it will put a 
       # new environment file that matches our step count. That's when we run 
@@ -418,6 +422,26 @@ class ReverieServer:
           
       # Sleep so we don't burn our machines. 
       time.sleep(self.server_sleep)
+      
+      #-------------------------- custom. used when backend only -------------------------------------#
+      curr_move_file = f"{sim_folder}/movement/{self.step}.json"
+      with open(curr_move_file, "r") as outfile: 
+          movement_data = json.load(outfile)
+
+      # Convert initial data to desired format
+      output_data = {}
+      for persona, details in movement_data['persona'].items():
+          movement = details['movement']
+          output_data[persona] = {
+              "maze": "the_ville_and_ours",
+              "x": movement[0],
+              "y": movement[1]
+          }
+
+      curr_move_file = f"{sim_folder}/environment/{self.step+1}.json"
+      with open(curr_move_file, "w") as outfile: 
+          outfile.write(json.dumps(output_data, indent=2))
+      #-------------------------- custom. used when backend only -------------------------------------#
 
 
   def open_server(self): 
@@ -442,7 +466,7 @@ class ReverieServer:
     while True:
       #sim_command = input("Enter option: ")
       #sim_command = sim_command.strip()
-      sim_command = "run 1"
+      sim_command = "run 600"
       ret_str = ""
 
       try: 
