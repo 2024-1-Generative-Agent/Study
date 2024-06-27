@@ -1,3 +1,7 @@
+# activate/*
+가상환경이름/*
+*.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

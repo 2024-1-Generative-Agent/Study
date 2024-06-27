@@ -18,7 +18,7 @@
 
 ## Contributors
 - Prometeus 5기 신우림 ([github](https://github.com/Rainwoorimforest))
-- Prometeus 4기 유통균 ([github](https://github.com/yoodonggyun-github))
+- Prometeus 4기 유동균 ([github](https://github.com/yoodonggyun-github))
 - Prometeus 3기 박은주 ([github](https://github.com/enjprk41))
 - Prometeus 3기 모진호 ([github](https://github.com/JinhoMo))
 - Prometeus 2기 김종효 ([github](https://github.com/naye971012))
