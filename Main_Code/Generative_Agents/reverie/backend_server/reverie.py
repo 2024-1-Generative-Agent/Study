@@ -449,7 +449,7 @@ class ReverieServer:
           
       # Sleep so we don't burn our machines. 
       time.sleep(self.server_sleep)
-      
+      self.maze.replace_gallery_pieces_all() #replace gallery descriptions
 
 
 
