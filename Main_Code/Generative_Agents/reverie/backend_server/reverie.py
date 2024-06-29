@@ -311,8 +311,35 @@ class ReverieServer:
     game_obj_cleanup = dict()
 
     # The main while loop of Reverie. 
+    
     while (True): 
       # Done with this iteration if <int_counter> reaches 0. 
+      
+
+      #-------------------------- custom. used when backend only -------------------------------------#
+      curr_move_file = f"{sim_folder}/movement/{self.step-1}.json"
+      if os.path.exists(curr_move_file):
+        print("---------------UPDATE MOVEMENT/ENVIRONMENT----------------")
+        with open(curr_move_file, "r") as outfile: 
+            movement_data = json.load(outfile)
+
+        # Convert initial data to desired format
+        output_data = {}
+        for persona, details in movement_data['persona'].items():
+            movement = details['movement']
+            output_data[persona] = {
+                "maze": "the_ville_and_ours",
+                "x": movement[0],
+                "y": movement[1]
+            }
+
+        curr_move_file = f"{sim_folder}/environment/{self.step}.json"
+        with open(curr_move_file, "w") as outfile: 
+            outfile.write(json.dumps(output_data, indent=2))
+      #-------------------------- custom. used when backend only -------------------------------------#
+
+
+
       if int_counter == 0: 
         break
       
@@ -423,25 +450,7 @@ class ReverieServer:
       # Sleep so we don't burn our machines. 
       time.sleep(self.server_sleep)
       
-      #-------------------------- custom. used when backend only -------------------------------------#
-      curr_move_file = f"{sim_folder}/movement/{self.step}.json"
-      with open(curr_move_file, "r") as outfile: 
-          movement_data = json.load(outfile)
 
-      # Convert initial data to desired format
-      output_data = {}
-      for persona, details in movement_data['persona'].items():
-          movement = details['movement']
-          output_data[persona] = {
-              "maze": "the_ville_and_ours",
-              "x": movement[0],
-              "y": movement[1]
-          }
-
-      curr_move_file = f"{sim_folder}/environment/{self.step+1}.json"
-      with open(curr_move_file, "w") as outfile: 
-          outfile.write(json.dumps(output_data, indent=2))
-      #-------------------------- custom. used when backend only -------------------------------------#
 
 
   def open_server(self): 
@@ -466,7 +475,7 @@ class ReverieServer:
     while True:
       #sim_command = input("Enter option: ")
       #sim_command = sim_command.strip()
-      sim_command = "run 600"
+      sim_command = "run 10"
       ret_str = ""
 
       try: 

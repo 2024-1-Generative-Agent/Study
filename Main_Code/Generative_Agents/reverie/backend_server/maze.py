@@ -160,18 +160,32 @@ class Maze:
         
         row += [tile_details]
       self.tiles += [row]
-    # Each game object occupies an event in the tile. We are setting up the 
-    # default event value here. 
-    for i in range(self.maze_height):
-      for j in range(self.maze_width): 
-        if self.tiles[i][j]["game_object"]:
-          object_name = ":".join([self.tiles[i][j]["world"], 
-                                  self.tiles[i][j]["sector"], 
-                                  self.tiles[i][j]["arena"], 
-                                  self.tiles[i][j]["game_object"]])
-          go_event = (object_name, None, None, None)
-          self.tiles[i][j]["events"].add(go_event)
+    
+    
+    #======================= CUSTOM ADDED ==========================================#
+    
+    #reader for add image description in event
+    with open('image_description.txt','r') as reader:
+            
+      # Each game object occupies an event in the tile. We are setting up the 
+      # default event value here. 
+      for i in range(self.maze_height):
+        for j in range(self.maze_width): 
+          if self.tiles[i][j]["game_object"]:
+            object_name = ":".join([self.tiles[i][j]["world"], 
+                                    self.tiles[i][j]["sector"], 
+                                    self.tiles[i][j]["arena"], 
+                                    self.tiles[i][j]["game_object"]])
+            if "piece" in object_name:
+              image_description_line = reader.readline()
+              data = image_description_line.split(',')
+              go_event = (object_name,data[1],data[2],data[3])
+            else:
+              go_event = (object_name, None, None, None)
+            self.tiles[i][j]["events"].add(go_event)
+    #======================= CUSTOM ADDED ==========================================#
 
+    
     # Reverse tile access. 
     # <self.address_tiles> -- given a string address, we return a set of all 
     # tile coordinates belonging to that address (this is opposite of  
