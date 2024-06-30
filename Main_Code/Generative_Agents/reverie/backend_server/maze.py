@@ -178,7 +178,7 @@ class Maze:
                                     self.tiles[i][j]["game_object"]])
             if "piece" in object_name:
               image_description_line = reader.readline()
-              data = image_description_line.split(',')
+              data = image_description_line.split('\t')
               go_event = (object_name,data[1],data[2],data[3])
               self.object_name2go_event[object_name] = go_event #for remove event easily
             else:
@@ -237,7 +237,7 @@ class Maze:
             if "piece" in object_name:
               #------ read from txt file --------#
               image_description_line = reader.readline()
-              data = image_description_line.split(',')
+              data = image_description_line.split('\t')
               
               #------ remove old one ------#
               prev_event = self.object_name2go_event[object_name]
