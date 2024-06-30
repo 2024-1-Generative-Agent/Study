@@ -7,6 +7,15 @@
 > - original code: https://github.com/joonspk-research/generative_agents.git
 
 
+## 20240629 수정사항
+- maze.py - replace_gallery_pieces_all() 함수 추가
+    - each reverive step마다 갤러리의 작품들의 변경 여부를 maze matrix에 반영합니다.
+    - prev step과 current step의 작품이 다른 경우, updated event를 생성하여 반영합니다.
+- maze.py - 초기 갤러리 작품 설명들 추가
+    - backend_server/reverive/image_descrption.txt 파일에 저장, events tile을 통해 maze matrix에 반영합니다.
+- 초기 이미지 삽입 및 이미지 수정은 가능한 상황이나, NPC가 직접 이미지 수정은 못하는 상황입니다.
+- 따라서, 가상 세계 동작 도중의 이미지 수정은 사람이 하는 방향으로 하는 것이..
+
 ## Structure
 >
 > ### mapping
