@@ -36,6 +36,9 @@ def print_run_prompts(prompt_template=None,
   print ("~~~ prompt    ----------------------------------------------------")
   print (prompt, "\n")
   print ("~~~ output    ----------------------------------------------------")
-  print (output, "\n") 
+  try:
+    print(output, "\n")
+  except UnicodeEncodeError:
+    print(output.encode('utf-8', 'replace').decode('cp949', 'replace'), "\n")
   print ("=== END ==========================================================")
   print ("\n\n\n")

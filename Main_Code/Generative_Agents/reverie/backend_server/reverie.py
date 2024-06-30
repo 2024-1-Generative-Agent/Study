@@ -338,8 +338,6 @@ class ReverieServer:
             outfile.write(json.dumps(output_data, indent=2))
       #-------------------------- custom. used when backend only -------------------------------------#
 
-
-
       if int_counter == 0: 
         break
       
@@ -475,7 +473,7 @@ class ReverieServer:
     while True:
       #sim_command = input("Enter option: ")
       #sim_command = sim_command.strip()
-      sim_command = "run 10"
+      sim_command = "run 600"
       ret_str = ""
 
       try: 
