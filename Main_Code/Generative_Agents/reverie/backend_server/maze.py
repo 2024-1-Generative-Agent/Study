@@ -160,18 +160,33 @@ class Maze:
         
         row += [tile_details]
       self.tiles += [row]
-    # Each game object occupies an event in the tile. We are setting up the 
-    # default event value here. 
-    for i in range(self.maze_height):
-      for j in range(self.maze_width): 
-        if self.tiles[i][j]["game_object"]:
-          object_name = ":".join([self.tiles[i][j]["world"], 
-                                  self.tiles[i][j]["sector"], 
-                                  self.tiles[i][j]["arena"], 
-                                  self.tiles[i][j]["game_object"]])
-          go_event = (object_name, None, None, None)
-          self.tiles[i][j]["events"].add(go_event)
+    
+    
+    #======================= CUSTOM ADDED ==========================================#
+    
+    #reader for add image description in event
+    with open('image_description.txt','r') as reader:
+      self.object_name2go_event = dict()
+      # Each game object occupies an event in the tile. We are setting up the 
+      # default event value here. 
+      for i in range(self.maze_height):
+        for j in range(self.maze_width): 
+          if self.tiles[i][j]["game_object"]:
+            object_name = ":".join([self.tiles[i][j]["world"], 
+                                    self.tiles[i][j]["sector"], 
+                                    self.tiles[i][j]["arena"], 
+                                    self.tiles[i][j]["game_object"]])
+            if "piece" in object_name:
+              image_description_line = reader.readline()
+              data = image_description_line.split(',')
+              go_event = (object_name,data[1],data[2],data[3])
+              self.object_name2go_event[object_name] = go_event #for remove event easily
+            else:
+              go_event = (object_name, None, None, None)
+            self.tiles[i][j]["events"].add(go_event)
+    #======================= CUSTOM ADDED ==========================================#
 
+    
     # Reverse tile access. 
     # <self.address_tiles> -- given a string address, we return a set of all 
     # tile coordinates belonging to that address (this is opposite of  
@@ -208,6 +223,39 @@ class Maze:
             self.address_tiles[add].add((j, i))
           else: 
             self.address_tiles[add] = set([(j, i)])
+
+  def replace_gallery_pieces_all(self): #--------------- CUSTOM ---------------------------#
+    
+    with open('image_description.txt','r') as reader:
+      for i in range(self.maze_height):
+        for j in range(self.maze_width): 
+          if self.tiles[i][j]["game_object"]:
+            object_name = ":".join([self.tiles[i][j]["world"], 
+                                    self.tiles[i][j]["sector"], 
+                                    self.tiles[i][j]["arena"], 
+                                    self.tiles[i][j]["game_object"]])
+            if "piece" in object_name:
+              #------ read from txt file --------#
+              image_description_line = reader.readline()
+              data = image_description_line.split(',')
+              
+              #------ remove old one ------#
+              prev_event = self.object_name2go_event[object_name]
+              #print(prev_event)
+              #print(self.tiles[i][j]['events'])
+              self.tiles[i][j]['events'].discard(prev_event) 
+              
+              #----- add new one -----------#
+              go_event = (object_name,data[1],data[2],data[3])
+              self.tiles[i][j]["events"].add(go_event)
+              
+              #------ add flag if piece is new, remove if false -----#
+              new_event = (object_name, 'has been', 'replaced with a new piece','replace with a new piece, witch is different with old one.')
+              if(prev_event!=go_event):
+                self.tiles[i][j]["events"].add(new_event)
+                
+              else:
+                self.tiles[i][j]["events"].discard(new_event)
 
 
   def turn_coordinate_to_tile(self, px_coordinate): 
