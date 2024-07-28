@@ -1,7 +1,412 @@
+let meta = `{
+  "fork_sim_code": "ours",
+  "start_date": "February 13, 2023",
+  "curr_time": "February 13, 2023, 09:00:00",
+  "sec_per_step": 15,
+  "maze_name": "the_ville_and_ours",
+  "persona_names": [
+    "Dylan Yoon",
+    "Emily Parker",
+    "Helen Potter",
+    "Johnny Kim",
+    "Reynolds Liam",
+    "Elowen Hart",
+    "Ethan Reed",
+    "James Mond",
+    "Rain Forest",
+    "Tina Thompson"
+  ],
+  "step": 0
+}`;
+
+let reverie = `{
+  "persona": {
+    "Dylan Yoon": {
+      "movement": [
+        21,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "resting on a sofa and reflecting on his remaining years @ the Ville:artist's co-living space:Latoya Williams's bathroom:shower",
+      "chat": null
+    },
+    "Emily Parker": {
+      "movement": [
+        41,
+        87
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "attending her first class at the university @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Helen Potter": {
+      "movement": [
+        49,
+        84
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "exploring the artwork at the gallery @ the Ville:Gallery:firsh exhibit place stand exhibit:first piece",
+      "chat": null
+    },
+    "Johnny Kim": {
+      "movement": [
+        44,
+        88
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "prepping for his lecture at the university @ the Ville:artist's co-living space:common room:common room table",
+      "chat": null
+    },
+    "Reynolds Liam": {
+      "movement": [
+        41,
+        86
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "attending England and America Literature class @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Elowen Hart": {
+      "movement": [
+        54,
+        73
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "continuing to work on her new series of paintings in her home art studio @ the Ville:Arthur Burton's apartment:main room:desk",
+      "chat": null
+    },
+    "Ethan Reed": {
+      "movement": [
+        76,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "working on remote projects @ the Ville:Hobbs Cafe:cafe:cafe customer seating",
+      "chat": null
+    },
+    "James Mond": {
+      "movement": [
+        78,
+        86
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Rain Forest and James Mond are discussing the upcoming innovative art exhibition that will feature artists using generative AI to create mesmerizing abstract compositions and intricate 3D sculptures. @ <persona> Rain Forest",
+      "chat": [
+        [
+          "Rain Forest",
+          "Hey James, I noticed you're opening up the gallery today. Have you come across any new artworks that caught your eye?"
+        ],
+        [
+          "James Mond",
+          "Hey Rain, yes I'm always on the lookout for new pieces. In fact, we have some exciting new exhibitions coming up that you might be interested in."
+        ],
+        [
+          "Rain Forest",
+          "That sounds intriguing, James. I'm always interested in discovering new artists and their works. Could you tell me more about the upcoming exhibitions?"
+        ],
+        [
+          "James Mond",
+          "Certainly, Rain. We are planning an innovative exhibit focusing on generative AI and its impact on the art world. I think you'll find it quite fascinating."
+        ],
+        [
+          "Rain Forest",
+          "That sounds like a truly unique exhibit, James. I'd love to learn more about how generative AI is reshaping the art landscape. Do you have any specific artists or pieces lined up for the showcase?"
+        ],
+        [
+          "James Mond",
+          "Yes, Rain. We have a few standout artists who have created incredible pieces using generative AI algorithms. One of them is a young artist who combines traditional painting techniques with AI-generated patterns to create mesmerizing abstract compositions. I believe you'll appreciate the creativity and innovation on display."
+        ],
+        [
+          "Rain Forest",
+          "That sounds fascinating, James. I can't wait to see these innovative pieces firsthand. When will the exhibit be opening to the public?"
+        ],
+        [
+          "James Mond",
+          "The exhibit will be opening in two weeks, Rain. I'll make sure to send you an invitation once we have everything set up. It would be great to have your expert eye on these artworks."
+        ],
+        [
+          "Rain Forest",
+          "Thank you, James. I look forward to attending the exhibit and experiencing the innovative artworks firsthand. Please do send me the invitation once everything is ready."
+        ],
+        [
+          "James Mond",
+          "Sure, Rain. I'll keep you updated on the progress of the exhibit and make sure to send you the invitation as soon as everything is ready."
+        ],
+        [
+          "Rain Forest",
+          "Thank you, James. Your insight into the upcoming exhibit has piqued my interest. I can't wait to see the innovative pieces on display. Please do keep me updated on any developments."
+        ],
+        [
+          "James Mond",
+          "I will definitely keep you in the loop, Rain. It's always a pleasure to discuss art with someone as passionate as you."
+        ],
+        [
+          "Rain Forest",
+          "I'm glad to hear about the upcoming exhibit, James. I'll make sure to mark my calendar for the opening day. Looking forward to seeing those innovative pieces firsthand."
+        ],
+        [
+          "James Mond",
+          "I'm glad to hear that, Rain. Your presence at the exhibit will definitely add value to the experience. I'll keep you updated on any new developments or artists that are confirmed for the showcase."
+        ],
+        [
+          "Rain Forest",
+          "Thank you, James. I appreciate the insight into the upcoming exhibit and look forward to attending. Do you know if any other notable artists will be featured in the showcase besides the young artist you mentioned?"
+        ],
+        [
+          "James Mond",
+          "We are also in talks with a renowned sculptor who utilizes generative AI to create intricate 3D sculptures. Their work truly pushes the boundaries of traditional art forms."
+        ]
+      ]
+    },
+    "Rain Forest": {
+      "movement": [
+        77,
+        86
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Rain Forest and James Mond are discussing the upcoming innovative art exhibition that will feature artists using generative AI to create mesmerizing abstract compositions and intricate 3D sculptures. @ <persona> James Mond",
+      "chat": [
+        [
+          "Rain Forest",
+          "Hey James, I noticed you're opening up the gallery today. Have you come across any new artworks that caught your eye?"
+        ],
+        [
+          "James Mond",
+          "Hey Rain, yes I'm always on the lookout for new pieces. In fact, we have some exciting new exhibitions coming up that you might be interested in."
+        ],
+        [
+          "Rain Forest",
+          "That sounds intriguing, James. I'm always interested in discovering new artists and their works. Could you tell me more about the upcoming exhibitions?"
+        ],
+        [
+          "James Mond",
+          "Certainly, Rain. We are planning an innovative exhibit focusing on generative AI and its impact on the art world. I think you'll find it quite fascinating."
+        ],
+        [
+          "Rain Forest",
+          "That sounds like a truly unique exhibit, James. I'd love to learn more about how generative AI is reshaping the art landscape. Do you have any specific artists or pieces lined up for the showcase?"
+        ],
+        [
+          "James Mond",
+          "Yes, Rain. We have a few standout artists who have created incredible pieces using generative AI algorithms. One of them is a young artist who combines traditional painting techniques with AI-generated patterns to create mesmerizing abstract compositions. I believe you'll appreciate the creativity and innovation on display."
+        ],
+        [
+          "Rain Forest",
+          "That sounds fascinating, James. I can't wait to see these innovative pieces firsthand. When will the exhibit be opening to the public?"
+        ],
+        [
+          "James Mond",
+          "The exhibit will be opening in two weeks, Rain. I'll make sure to send you an invitation once we have everything set up. It would be great to have your expert eye on these artworks."
+        ],
+        [
+          "Rain Forest",
+          "Thank you, James. I look forward to attending the exhibit and experiencing the innovative artworks firsthand. Please do send me the invitation once everything is ready."
+        ],
+        [
+          "James Mond",
+          "Sure, Rain. I'll keep you updated on the progress of the exhibit and make sure to send you the invitation as soon as everything is ready."
+        ],
+        [
+          "Rain Forest",
+          "Thank you, James. Your insight into the upcoming exhibit has piqued my interest. I can't wait to see the innovative pieces on display. Please do keep me updated on any developments."
+        ],
+        [
+          "James Mond",
+          "I will definitely keep you in the loop, Rain. It's always a pleasure to discuss art with someone as passionate as you."
+        ],
+        [
+          "Rain Forest",
+          "I'm glad to hear about the upcoming exhibit, James. I'll make sure to mark my calendar for the opening day. Looking forward to seeing those innovative pieces firsthand."
+        ],
+        [
+          "James Mond",
+          "I'm glad to hear that, Rain. Your presence at the exhibit will definitely add value to the experience. I'll keep you updated on any new developments or artists that are confirmed for the showcase."
+        ],
+        [
+          "Rain Forest",
+          "Thank you, James. I appreciate the insight into the upcoming exhibit and look forward to attending. Do you know if any other notable artists will be featured in the showcase besides the young artist you mentioned?"
+        ],
+        [
+          "James Mond",
+          "We are also in talks with a renowned sculptor who utilizes generative AI to create intricate 3D sculptures. Their work truly pushes the boundaries of traditional art forms."
+        ]
+      ]
+    },
+    "Tina Thompson": {
+      "movement": [
+        99,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "arriving at the gallery and starting her shift at the information desk @ the Ville:Gallery:enterance infor:employee place",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:16:00"
+  }
+}`;
+
+let move0 = `{
+  "persona": {
+    "Dylan Yoon": {
+      "movement": [
+        16,
+        75
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "resting on a sofa and reflecting on his remaining years @ the Ville:artist's co-living space:Latoya Williams's bathroom:shower",
+      "chat": null
+    },
+    "Emily Parker": {
+      "movement": [
+        26,
+        75
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "attending her first class at the university @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Helen Potter": {
+      "movement": [
+        37,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "exploring the artwork at the gallery @ the Ville:Gallery:firsh exhibit place stand exhibit:first piece",
+      "chat": null
+    },
+    "Johnny Kim": {
+      "movement": [
+        16,
+        87
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "prepping for his lecture at the university @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Reynolds Liam": {
+      "movement": [
+        26,
+        87
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "attending England and America Literature class @ the Ville:Dorm for Oak Hill College:common room:common room table",
+      "chat": null
+    },
+    "Elowen Hart": {
+      "movement": [
+        54,
+        70
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "continuing to work on her new series of paintings in her home art studio @ the Ville:Arthur Burton's apartment:main room:desk",
+      "chat": null
+    },
+    "Ethan Reed": {
+      "movement": [
+        66,
+        75
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "working on remote projects @ the Ville:Hobbs Cafe:cafe:cafe customer seating",
+      "chat": null
+    },
+    "James Mond": {
+      "movement": [
+        73,
+        70
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "heading to the gallery and opening for the day @ the Ville:Gallery:enterance infor:employee place",
+      "chat": null
+    },
+    "Rain Forest": {
+      "movement": [
+        87,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "at the gallery, searching for exceptional artworks to purchase @ the Ville:Gallery:firsh exhibit place stand exhibit:first piece",
+      "chat": null
+    },
+    "Tina Thompson": {
+      "movement": [
+        95,
+        74
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "arriving at the gallery and starting her shift at the information desk @ the Ville:Gallery:enterance infor:employee place",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:00:00"
+  }
+}`;
+
+meta = JSON.parse(meta);
+move0 = JSON.parse(move0);
+reverie = JSON.parse(reverie);
+
+console.log(move0.persona);
+
+// function place_npc() {
+//   for (let key in reverie.persona) {
+//     let npc = reverie.persona[key];
+//     let [x, y] = npc.movement;
+
+//     let npcObj = new buildNPC(key, x, y);
+//     _npcs.push(npcObj);
+//   }
+// }
+
 class system {
   constructor() {
-    this.sprite_sheet_list = ["sprite000.png"];
+    // request persona names to server
+    // temp
+    this.sprite_sheet_list = meta.persona_names;
+    this.date = meta.curr_time;
   }
+
+  // movement 0.json; place npc on the initial location
+  init() {
+    for (let key in this.sprite_sheet_list) {
+      let npc = reverie.persona[key];
+      let [x, y] = npc.movement;
+
+      let npcObj = new buildNPC(key, x, y);
+      _npcs.push(npcObj);
+    }
+  }
+
+  isupdated(yet = false){
+    let temp = reverie.curr_time;
+    if (this.date != temp && yet) {
+      this.date = temp;
+      return true;
+    }
+    return false;
+  }
+
+  updateNPCs(dt){
+    if (dt) {
+      for (let npc of _npcs) {
+        let [x, y] = reverie.persona[npc.name].movement;
+        npc.move(x, y);
+      }
+    }
+    return false;
+  }
+
+  onUpdate(){
+    this.updateNPCs(this.isupdated());
+  }
+
+  isVaildMove(x, y){
+    return 
+  }
+
 }
 
 const _npcs = [];
@@ -167,26 +572,26 @@ class buildNPC {
   }
 }
 
-App.onInit.Add(function () {
-  //NPC 추가
-  _npcs.push(new buildNPC("테스터", 21, 48));
-});
+// App.onInit.Add(function () {
+//   //NPC 추가
+//   _npcs.push(new buildNPC("테스터", 21, 48));
+// });
 
-App.onSay.add(function (player, text) {
-  //말해보기
-  for (let npc of _npcs) {
-    npc.responseToPlayer(text);
-  }
-});
+// App.onSay.add(function (player, text) {
+//   //말해보기
+//   for (let npc of _npcs) {
+//     npc.responseToPlayer(text);
+//   }
+// });
 
-App.onUpdate.Add(function (dt) {
-  //위치 얻기
-  for (let npc of _npcs) {
-    npc.getLoc();
-  }
-});
+// App.onUpdate.Add(function (dt) {
+//   //위치 얻기
+//   for (let npc of _npcs) {
+//     npc.getLoc();
+//   }
+// });
 
-App.onDestroy.Add(function () {
-  //모든 오브젝트 제거
-  Map.clearAllObjects();
-});
+// App.onDestroy.Add(function () {
+//   //모든 오브젝트 제거
+//   Map.clearAllObjects();
+// });
