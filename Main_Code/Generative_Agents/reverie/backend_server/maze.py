@@ -15,6 +15,9 @@ import math
 from global_methods import *
 from utils import *
 
+from dalle import make_dalle_image
+
+
 class Maze: 
   def __init__(self, maze_name): 
     
@@ -181,6 +184,7 @@ class Maze:
               data = image_description_line.split('\t')
               go_event = (object_name,data[1],data[2],data[3])
               self.object_name2go_event[object_name] = go_event #for remove event easily
+              make_dalle_image(self.tiles[i][j], data[0], data[3])
             else:
               go_event = (object_name, None, None, None)
             self.tiles[i][j]["events"].add(go_event)
@@ -250,10 +254,10 @@ class Maze:
               self.tiles[i][j]["events"].add(go_event)
               
               #------ add flag if piece is new, remove if false -----#
-              new_event = (object_name, 'has been', 'replaced with a new piece','replace with a new piece, witch is different with old one.')
+              new_event = (object_name, 'has been', 'replaced with a new piece','replaced with a new piece, witch is different with old one.')
               if(prev_event!=go_event):
                 self.tiles[i][j]["events"].add(new_event)
-                
+                make_dalle_image(data[0], data[3])
               else:
                 self.tiles[i][j]["events"].discard(new_event)
 

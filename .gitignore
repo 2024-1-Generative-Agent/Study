@@ -2,6 +2,23 @@
 # 가상환경이름/*
 # *.sh
 
+Main_Code/Generative_Agents/reverie/backend_server/old_dummys/*
+*/testing*/*
+*.zip
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240710014500/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240710014428/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728185826/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728185843/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728185916/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728190021/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728190148/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728190258/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728190333/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728191834/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728192909/*
+Main_Code/Generative_Agents/environment/frontend_server/storage/testing1_20240728192933/*
+
+
 # # Byte-compiled / optimized / DLL files
 # __pycache__/
 # *.py[cod]

@@ -221,7 +221,7 @@ def copyanything(src, dst):
   
   #from distutils.dir_util import copy_tree
   #copy_tree(src, dst)
-  
+
   try:
     if os.path.exists(dst):
       shutil.rmtree(dst)

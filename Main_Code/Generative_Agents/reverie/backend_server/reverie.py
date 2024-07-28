@@ -58,6 +58,15 @@ class ReverieServer:
     
     print(f"fork_folder: {fork_folder}")
     print(f"sim_folder : {sim_folder}")
+
+    import os
+    import datetime
+    current_time = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    if os.path.exists(sim_folder):
+      print(f"{sim_code} already exist, save into {sim_code}_{current_time}")
+      sim_code = f"{sim_code}_{current_time}"
+      self.sim_code = sim_code
+      sim_folder = f"{fs_storage}/{self.sim_code}"
     
     copyanything(fork_folder, sim_folder)
 
